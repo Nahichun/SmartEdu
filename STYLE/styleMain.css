@@ -1,0 +1,57 @@
+#quoteText {
+    user-select: none;
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 128px;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1600px;
+}
+
+#quoteText span {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#quoteText span:first-child {
+    margin-bottom: 20px;
+}
+
+#mainText {
+    user-select: none;
+    position: absolute;
+    top: 1400px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-family: Montserrat, sans-serif;
+    font-size: 56px;
+    font-weight: 500;
+    z-index: 1;
+    width: 80%;
+    max-width: 1200px;
+    line-height: 1.2;
+}
+
+#mainText br {
+    display: block;
+    content: "";
+    margin-bottom: 20px;
+}
