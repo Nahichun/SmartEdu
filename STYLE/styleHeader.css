@@ -1,33 +1,57 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 80px; /* Отступ для фиксированной шапки */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Стили для шапки */
 .header {
-  display: flex;
-  user-select: none;
-  align-items: center;
-  padding: 10px 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  
+    display: flex;
+    user-select: none;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    border-radius: 68px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1); /* Легкая прозрачность */
+    backdrop-filter: blur(5px); /* Мягкий blur */
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
+    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Легкая граница */
 }
 
 #headText a {
-  margin-right: auto; 
-  text-decoration: none;
-  color: #000000;
-  font-family: Montserrat, sans-serif;
-  font-size: 48px;
-  padding: 5px 10px;
-  transition: color 0.3s;
-  font-weight: 700;
+    margin-right: auto; 
+    text-decoration: none;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-size: 48px;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    font-weight: 700;
 }
 
 .header-center {
-  display: flex;
-  gap: 20px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .header form {
@@ -37,74 +61,66 @@
 #homeText a,
 #newsText a,
 #aboutusText a {
-  text-decoration: none;
-  color: #000000;
-  font-family: Montserrat, sans-serif;
-  font-size: 36px;
-  padding: 5px 10px;
-  transition: color 0.3s;
-  font-weight: 500;
-  position: relative;
-  transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
 }
 
-.header-center:hover #homeText a::after {
-  width: 0;
-}
-
-#homeText a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  transition: width 0.4s ease;
-}
-
+/* ИСПРАВЛЕННЫЕ эффекты подчеркивания для ссылок */
+#homeText a::after,
 #newsText a::after,
 #aboutusText a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: black;
-  transition: width 0.4s ease;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.4s ease;
 }
 
+#homeText:hover a::after,
 #newsText:hover a::after,
 #aboutusText:hover a::after {
-  width: 100%;
+    width: 100%;
 }
+
 #homeText a:hover,
 #newsText a:hover,
 #aboutusText a:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
+/* Стили для кнопки */
 .entryButton {
-  border: none;
-  border-radius: 24px;
-  background-color: #00CCD9;
-  color: white;
-  font-family: Montserrat, sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  padding: 15px 30px;
-  box-shadow: 0 5px 15px 0 rgba(0, 204, 217, 0.5);
-  transition: all 0.3s ease;
-  width: 333px;
-  height: 93px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border: none;
+    border-radius: 24px;
+    background-color: #00CCD9;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 15px 30px;
+    box-shadow: 0 5px 15px 0 rgba(0, 204, 217, 0.5);
+    transition: all 0.3s ease;
+    width: 333px;
+    height: 93px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .entryButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px 0 rgba(0, 204, 217, 0.75);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px 0 rgba(0, 204, 217, 0.75);
 }
+
+
+

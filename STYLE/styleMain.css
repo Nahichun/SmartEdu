@@ -36,7 +36,7 @@
 #mainText {
     user-select: none;
     position: absolute;
-    top: 1400px;
+    top: 1100px;
     left: 50%;
     transform: translateX(-50%);
     color: rgb(0, 0, 0);
@@ -55,3 +55,21 @@
     content: "";
     margin-bottom: 20px;
 }
+
+#coursesText {
+    user-select: none;
+    position: absolute;
+    top: 1750px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    z-index: 1;
+    width: 80%;
+    max-width: 1200px;
+    line-height: 1.2;
+}
+

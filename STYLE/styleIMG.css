@@ -21,7 +21,7 @@ body {
 #back2 {
     position: absolute;
     user-select: none;
-    top: 1545px;
+    top: 1350px;
     left: 0px;
     transform: translateX(-50%);
     width: 100%;
@@ -40,7 +40,7 @@ body {
 #img1 {
     position: absolute;
     user-select: none;
-    top: 300px;
+    top: 200px;
     left: 257px;
 }
 #img2 {
@@ -58,8 +58,8 @@ body {
 #img4 {
     position: absolute;
     user-select: none;
-    top: 1000px;
-    left: 1300px; 
+    top: 900px;
+    left: 1600px; 
 }
 #img5 {
     position: absolute;
@@ -73,4 +73,9 @@ body {
     top: 1580px;
     left: 1520px; 
 }
-
+#img7{   
+    position: absolute;
+    user-select: none;
+    top: 1800px;
+    left: 100px; 
+}
