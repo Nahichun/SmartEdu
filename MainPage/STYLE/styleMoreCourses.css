@@ -1,0 +1,59 @@
+#moreText{
+    user-select: none;
+    position: absolute;
+    top: 2850px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    z-index: 1;
+    width: 80%;
+    max-width: 1200px;
+    line-height: 1.2;
+}
+
+.btnMore {
+    position: absolute;
+    top: 2950px; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Тёмное основание с яркой обводкой */
+    background: rgba(0, 51, 54, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid #00CCD9;
+    
+    border-radius: 24px;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    padding: 15px 30px;
+    width: 300px;
+    height: 46px;
+    
+    box-shadow: 
+        0 5px 25px rgba(0, 204, 217, 0.35),
+        0 3px 12px rgba(0, 0, 0, 0.25),
+        inset 0 0 20px rgba(0, 204, 217, 0.1);
+    
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnMore:hover {
+    transform: translateX(-50%) translateY(-3px);
+    background: rgba(0, 51, 54, 0.85);
+    border: 2px solid #00E6F6;
+    box-shadow: 
+        0 10px 40px rgba(0, 204, 217, 0.5),
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 30px rgba(0, 204, 217, 0.2);
+}

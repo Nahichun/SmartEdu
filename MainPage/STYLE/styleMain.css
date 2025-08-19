@@ -1,7 +1,12 @@
+body {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -moz-transform-origin: 0 0;
+}
 #quoteText {
     user-select: none;
     position: absolute;
-    top: 360px;
+    top: 380px;
     left: 50%;
     transform: translateX(-50%);
     color: white;

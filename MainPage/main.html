@@ -2,12 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="SmartEdu" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartEdu</title>
     <link rel="icon" type="image/png" href="IMG/cube 3.png">
     <link rel="stylesheet" href="STYLE/styleHeader.css">
     <link rel="stylesheet" href="STYLE/styleMain.css">
     <link rel="stylesheet" href="STYLE/styleIMG.css">
+    <link rel="stylesheet" href="STYLE/styleCourses.css">
+    <link rel="stylesheet" href="STYLE/styleMoreCourses.css">
+    <link rel="stylesheet" href="STYLE/styleHelpers.css">
     
     <script src="SCRIPT/scriptHeader.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
@@ -18,7 +22,7 @@
         <div id="headText"><a href="main.html">SmartEdu</a></div>
   
         <div class="header-center">
-            <div id="homeText"><a href="#">Главная</a></div>
+            <div id="homeText"><a href="main.html">Главная</a></div>
             <div id="newsText"><a href="#">Новости</a></div>
             <div id="aboutusText"><a href="#">О нас</a></div>
         </div>
@@ -57,27 +61,63 @@
     
 
     <div id="coursesText">Какие курсы мы предоставляем?</div>
+    <div class="courses_all">
+        <div class="square" id="square1">
+            <div class="name_courses">Физика</div>
+            <a href="#"><img href="test.html" class="courses_image" src="IMG/gravity (1) 1.png"></a>
+            <a class="courses" id="courses1" href="#">К курсам</a>
+        </div>
+        <div class="square" id="square2">
+            <div class="name_courses">Химия</div>
+            <a href="#"><img href="test.html" class="courses_image" src="IMG/flask 1.png"></a>
+            <a class="courses" id="courses2" href="#">К курсам</a>
+        </div>
+        <div class="square" id="square3">
+            <div class="name_courses">Математика</div>
+            <a href="#"><img href="test.html" class="courses_image" src="IMG/geometry 1.png"></a>
+            <a class="courses" id="courses2" href="#">К курсам</a>
+        </div>
+        <div class="square" id="square4">
+            <div class="name_courses">Русский язык</div>
+            <a href="#"><img href="test.html" class="courses_image" src="IMG/free-icon-foreign-language-5332505 1.png"></a>
+            <a class="courses" id="courses2" href="#">К курсам</a>
+        </div>
+
+
+    </div>
+
     
-    <!--<div class="courses">
-        <h4>К курсам</h4>
-        <h3>Физика</h3>
-        <h3>Химия</h3>
-        <h3>Математика</h3>
-        <h3>Русский язык</h3>
-        <img src="IMG/gravity (1) 1.png">
-        <img src="IMG/geometry 1.png">
-        <img src="IMG/flask 1.png">
-        <img src="IMG/free-icon-foreign-language-5332505 1.png">
-    </div>
+    <div id="moreText">И множество других курсов!</div>
+    <form action="test.html">
+        <button class="btnMore">Смотреть все</button>
+    </form>
 
-    <div class="andMore">
-        <h2>И множество других курсов!</h2>
-        <h3>Смотреть все</h3>
+    
+    <div class="helper-container">
+        <img id="booksImage" src="IMG/free-icon-stack-of-books-5832416 1.png">
+        <h1 id="helperText">Помощник в работе учителя</h1>
     </div>
-
-    <div class="teacherHelp">
+    
+    <div class="moreHelps">
+    
+        <div class="helpPair">
+            <img class="helpImage" src="IMG/free-icon-choice-1041974 1.png" alt="Help 1">
+            <div class="nameHelps">Большой выбор готовых заданий</div>
+        </div>
+    
+        <div class="helpPair">
+            <img class="helpImage" src="IMG/free-icon-podium-1426758 1.png" alt="Help 2">
+            <div class="nameHelps">Соревнования и состязания с призами</div>
+        </div>
+    
+        <div class="helpPair">
+            <img class="helpImage" src="IMG/checklist 1.png" alt="Help 3">
+            <div class="nameHelps">Проверка знаний</div>
+        </div>
+</div>
+    <!--<div class="teacherHelp">
         <h2>Помощник в работе учителя</h2>
-        <img id="img9" src="IMG/free-icon-stack-of-books-5832416 1.png">
+        
         <img id="img10" src="IMG/free-icon-choice-1041974 1.png">
         <img id="img11" src="IMG/free-icon-podium-1426758 1.png">
         <img id="img12" src="IMG/checklist 1.png">
