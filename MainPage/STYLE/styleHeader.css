@@ -1,4 +1,3 @@
-/* Базовые стили */
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +10,13 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    padding-top: 80px; /* Отступ для фиксированной шапки */
+    padding-top: 80px;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Стили для шапки */
 .header {
     display: flex;
+    justify-content: space-between;
     user-select: none;
     align-items: center;
     padding: 15px 30px;
@@ -27,12 +26,12 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.1); /* Легкая прозрачность */
-    backdrop-filter: blur(5px); /* Мягкий blur */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
     transition: all 0.4s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Легкая граница */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #headText a {
@@ -71,7 +70,7 @@ body {
     position: relative;
 }
 
-/* ИСПРАВЛЕННЫЕ эффекты подчеркивания для ссылок */
+
 #homeText a::after,
 #newsText a::after,
 #aboutusText a::after {
@@ -97,7 +96,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Стили для кнопки */
 .entryButton {
     border: none;
     border-radius: 24px;
