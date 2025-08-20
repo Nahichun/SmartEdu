@@ -35,8 +35,14 @@ body {
     z-index: -2;
     min-height: 100vh;
     overflow: visible;
+    
 }
-
+#img1, #img2, #img3, #img4, #img5, #img6, #img7 {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
+    
+}
 #img1 {
     position: absolute;
     user-select: none;
@@ -78,6 +84,29 @@ body {
     user-select: none;
     top: 1600px;
     left: 0px; 
+}
+#img4, #img5, #img6, #img7 {
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+#img4, #img5, #img6, #img7 {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+    #img1, #img2, #img3 {
+        transform: none !important;
+        transition: none !important;
+        will-change: auto;
+    }
+}
+@media (max-width: 768px) {
+    #img4, #img5, #img6, #img7 {
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 
