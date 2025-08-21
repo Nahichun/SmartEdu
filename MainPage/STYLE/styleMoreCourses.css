@@ -3,7 +3,8 @@
     position: absolute;
     top: 2850px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(calc(0.8 + 0.2 * (100vw / 1920)));
+    transform-origin: center top;
     color: rgb(0, 0, 0);
     text-align: center;
     font-family: Montserrat, sans-serif;
@@ -13,13 +14,17 @@
     width: 80%;
     max-width: 1200px;
     line-height: 1.2;
+    min-width: 300px;
+    margin: 0;
+    padding: 0;
 }
 
 .btnMore {
     position: absolute;
     top: 2950px; 
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(calc(0.8 + 0.2 * (100vw / 1920)));
+    transform-origin: center top;
     
     /* Тёмное основание с яркой обводкой */
     background: rgba(0, 51, 54, 0.7);
@@ -46,14 +51,141 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 200px;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .btnMore:hover {
-    transform: translateX(-50%) translateY(-3px);
+    transform: translateX(-50%) translateY(-3px) scale(calc(0.8 + 0.2 * (100vw / 1920)));
     background: rgba(0, 51, 54, 0.85);
     border: 2px solid #00E6F6;
     box-shadow: 
         0 10px 40px rgba(0, 204, 217, 0.5),
         0 6px 20px rgba(0, 0, 0, 0.3),
         inset 0 0 30px rgba(0, 204, 217, 0.2);
+}
+
+/* Контейнер для точного центрирования */
+.more-container {
+    position: absolute;
+    top: 2850px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Плавное масштабирование относительно ширины экрана */
+@media (max-width: 1920px) {
+    #moreText {
+        transform: translateX(-50%) scale(calc(0.8 + 0.2 * (100vw / 1920)));
+    }
+    
+    .btnMore {
+        transform: translateX(-50%) scale(calc(0.8 + 0.2 * (100vw / 1920)));
+    }
+    
+    .btnMore:hover {
+        transform: translateX(-50%) translateY(-3px) scale(calc(0.8 + 0.2 * (100vw / 1920)));
+    }
+}
+
+@media (max-width: 1200px) {
+    #moreText {
+        transform: translateX(-50%) scale(calc(0.7 + 0.3 * (100vw / 1200)));
+        font-size: 56px;
+    }
+    
+    .btnMore {
+        transform: translateX(-50%) scale(calc(0.7 + 0.3 * (100vw / 1200)));
+        font-size: 28px;
+        width: 280px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    #moreText {
+        transform: translateX(-50%) scale(calc(0.6 + 0.4 * (100vw / 768)));
+        font-size: 48px;
+        width: 90%;
+    }
+    
+    .btnMore {
+        transform: translateX(-50%) scale(calc(0.6 + 0.4 * (100vw / 768)));
+        font-size: 24px;
+        width: 250px;
+        height: 40px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #moreText {
+        transform: translateX(-50%) scale(calc(0.5 + 0.5 * (100vw / 480)));
+        font-size: 36px;
+        width: 95%;
+        min-width: 250px;
+    }
+    
+    .btnMore {
+        transform: translateX(-50%) scale(calc(0.5 + 0.5 * (100vw / 480)));
+        font-size: 20px;
+        width: 220px;
+        height: 38px;
+        padding: 10px 20px;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 320px) {
+    #moreText {
+        transform: translateX(-50%) scale(0.8);
+        font-size: 28px;
+        min-width: 200px;
+    }
+    
+    .btnMore {
+        transform: translateX(-50%) scale(0.8);
+        font-size: 16px;
+        width: 200px;
+        height: 36px;
+        padding: 8px 16px;
+        min-width: 160px;
+    }
+}
+
+/* Фиксируем минимальный размер для читаемости */
+#moreText {
+    font-size: max(20px, 64px);
+}
+
+.btnMore {
+    font-size: max(14px, 32px);
+}
+
+/* Сохранение пропорций при масштабировании */
+#moreText, .btnMore {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Гарантия центрирования */
+#moreText {
+    text-align: center;
+    left: 50%;
+    right: auto;
+}
+
+.btnMore {
+    left: 50%;
+    right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }

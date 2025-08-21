@@ -7,7 +7,6 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
     position: relative;
     overflow-x: hidden;
     padding-top: 80px;
@@ -17,9 +16,9 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    user-select: none;
     align-items: center;
-    padding: 15px 30px;
+    user-select: none;
+    padding: 15px 5%;
     position: fixed;
     border-radius: 68px;
     top: 0;
@@ -32,22 +31,29 @@ body {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
     transition: all 0.4s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 #headText a {
-    margin-right: auto; 
     text-decoration: none;
     color: #000000;
     font-family: Montserrat, sans-serif;
-    font-size: 48px;
+    font-size: clamp(24px, 5vw, 48px);
     padding: 5px 10px;
     transition: color 0.3s;
     font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .header-center {
     display: flex;
-    gap: 30px;
+    gap: clamp(15px, 3vw, 30px);
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -55,6 +61,7 @@ body {
 
 .header form {
     margin-left: auto;
+    flex-shrink: 0;
 }
 
 #homeText a,
@@ -63,13 +70,13 @@ body {
     text-decoration: none;
     color: #000000;
     font-family: Montserrat, sans-serif;
-    font-size: 36px;
+    font-size: clamp(18px, 3vw, 36px);
     padding: 5px 10px;
     transition: all 0.3s ease;
     font-weight: 500;
     position: relative;
+    white-space: nowrap;
 }
-
 
 #homeText a::after,
 #newsText a::after,
@@ -102,17 +109,21 @@ body {
     background-color: #00CCD9;
     color: white;
     font-family: Montserrat, sans-serif;
-    font-size: 36px;
+    font-size: clamp(18px, 3vw, 36px);
     font-weight: 700;
-    padding: 15px 30px;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px);
     box-shadow: 0 5px 15px 0 rgba(0, 204, 217, 0.5);
     transition: all 0.3s ease;
-    width: 333px;
-    height: 93px;
+    min-width: 120px;
+    min-height: 50px;
+    width: clamp(200px, 30vw, 330px);
+    height: clamp(60px, 8vw, 90px);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .entryButton:hover {
@@ -120,5 +131,122 @@ body {
     box-shadow: 0 15px 30px 0 rgba(0, 204, 217, 0.75);
 }
 
+/* Медиа-запросы для перестроения layout */
+@media (max-width: 1200px) {
+    .header {
+        justify-content: space-around;
+        padding: 15px 3%;
+    }
+    
+    .header-center {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+        gap: 20px;
+        left: auto;
+    }
+    
+    #headText {
+        order: 1;
+    }
+    
+    .header form {
+        order: 2;
+        margin-left: 0;
+    }
+}
 
+@media (max-width: 900px) {
+    .header {
+        padding: 12px 20px;
+        border-radius: 50px;
+        gap: 12px;
+    }
+    
+    .header-center {
+        gap: 15px;
+        margin-top: 12px;
+    }
+    
+    #headText a {
+        font-size: clamp(20px, 4vw, 32px);
+    }
+    
+    #homeText a,
+    #newsText a,
+    #aboutusText a {
+        font-size: clamp(16px, 2.5vw, 28px);
+    }
+    
+    .entryButton {
+        width: clamp(150px, 25vw, 280px);
+        height: clamp(50px, 7vw, 80px);
+        font-size: clamp(16px, 2.5vw, 28px);
+    }
+}
 
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .header {
+        padding: 10px 15px;
+        margin: 5px;
+    }
+    
+    .header-center {
+        gap: 12px;
+        margin-top: 10px;
+    }
+    
+    #homeText a,
+    #newsText a,
+    #aboutusText a {
+        font-size: 16px;
+        padding: 3px 8px;
+    }
+    
+    .entryButton {
+        min-width: 100px;
+        min-height: 45px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .header {
+        padding: 8px 12px;
+        border-radius: 40px;
+        gap: 8px;
+    }
+    
+    .header-center {
+        gap: 8px;
+        margin-top: 8px;
+    }
+    
+    #headText a {
+        font-size: 18px;
+    }
+    
+    #homeText a,
+    #newsText a,
+    #aboutusText a {
+        font-size: 14px;
+        padding: 2px 5px;
+    }
+    
+    .entryButton {
+        font-size: 14px;
+        padding: 6px 12px;
+        min-width: 90px;
+        min-height: 40px;
+    }
+}
