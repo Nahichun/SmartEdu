@@ -1,0 +1,1407 @@
+/*ШАПКА*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 80px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    padding: 15px 5%;
+    position: fixed;
+    border-radius: 68px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
+    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#headText a {
+    text-decoration: none;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(24px, 5vw, 48px);
+    padding: 5px 10px;
+    transition: color 0.3s;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.header-center {
+    display: flex;
+    gap: clamp(15px, 3vw, 30px);
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header form {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+#homeText a,
+#newsText a,
+#aboutusText a {
+    text-decoration: none;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(18px, 3vw, 36px);
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+}
+
+#homeText a::after,
+#newsText a::after,
+#aboutusText a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.4s ease;
+}
+
+#homeText:hover a::after,
+#newsText:hover a::after,
+#aboutusText:hover a::after {
+    width: 100%;
+}
+
+#homeText a:hover,
+#newsText a:hover,
+#aboutusText a:hover {
+    transform: scale(1.05);
+}
+
+.entryButton {
+    border: none;
+    border-radius: 24px;
+    background-color: #00CCD9;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(18px, 3vw, 36px);
+    font-weight: 700;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px);
+    box-shadow: 0 5px 15px 0 rgba(0, 204, 217, 0.5);
+    transition: all 0.3s ease;
+    min-width: 120px;
+    min-height: 50px;
+    width: clamp(200px, 30vw, 330px);
+    height: clamp(60px, 8vw, 90px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.entryButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px 0 rgba(0, 204, 217, 0.75);
+}
+
+/* Медиа-запросы для перестроения layout */
+@media (max-width: 1200px) {
+    .header {
+        justify-content: space-around;
+        padding: 15px 3%;
+    }
+    
+    .header-center {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+        gap: 20px;
+        left: auto;
+    }
+    
+    #headText {
+        order: 1;
+    }
+    
+    .header form {
+        order: 2;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 12px 20px;
+        border-radius: 50px;
+        gap: 12px;
+    }
+    
+    .header-center {
+        gap: 15px;
+        margin-top: 12px;
+    }
+    
+    #headText a {
+        font-size: clamp(20px, 4vw, 32px);
+    }
+    
+    #homeText a,
+    #newsText a,
+    #aboutusText a {
+        font-size: clamp(16px, 2.5vw, 28px);
+    }
+    
+    .entryButton {
+        width: clamp(150px, 25vw, 280px);
+        height: clamp(50px, 7vw, 80px);
+        font-size: clamp(16px, 2.5vw, 28px);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .header {
+        padding: 10px 15px;
+        margin: 5px;
+    }
+    
+    .header-center {
+        gap: 12px;
+        margin-top: 10px;
+    }
+    
+    #homeText a,
+    #newsText a,
+    #aboutusText a {
+        font-size: 16px;
+        padding: 3px 8px;
+    }
+    
+    .entryButton {
+        min-width: 100px;
+        min-height: 45px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .header {
+        padding: 8px 12px;
+        border-radius: 40px;
+        gap: 8px;
+    }
+    
+    .header-center {
+        gap: 8px;
+        margin-top: 8px;
+    }
+    
+    #headText a {
+        font-size: 18px;
+    }
+    
+    #homeText a,
+    #newsText a,
+    #aboutusText a {
+        font-size: 14px;
+        padding: 2px 5px;
+    }
+    
+    .entryButton {
+        font-size: 14px;
+        padding: 6px 12px;
+        min-width: 90px;
+        min-height: 40px;
+    }
+}
+
+/*ИЗОБРАЖЕНИЯ*/
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#back {
+    position: absolute;
+    user-select: none;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+    height: auto;
+    z-index: -2;
+    object-fit: cover;
+}
+
+#back2 {
+    position: absolute;
+    user-select: none;
+    top: 1350px;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    z-index: -2;
+    object-fit: cover;
+}
+
+.image {
+    position: relative;
+    z-index: -2;
+    min-height: 100vh;
+    overflow: visible;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6, #img7 {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Адаптивное позиционирование для всех изображений */
+#img1 {
+    position: absolute;
+    user-select: none;
+    top: 200px;
+    left: 10%;
+    width: clamp(100px, 15vw, 200px);
+}
+
+#img2 {
+    position: absolute;
+    user-select: none;
+    top: 400px;
+    left: 85%;
+    width: clamp(120px, 18vw, 250px);
+    transform: translateX(-100%);
+}
+
+#img3 {
+    position: absolute;
+    user-select: none;
+    top: 600px;
+    left: 8%;
+    width: clamp(90px, 14vw, 180px);
+}
+
+#img4 {
+    position: absolute;
+    user-select: none;
+    top: 900px;
+    left: 82%;
+    width: clamp(110px, 16vw, 220px);
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#img5 {
+    position: absolute;
+    user-select: none;
+    top: 1200px;
+    left: 5%;
+    width: clamp(80px, 12vw, 160px);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#img6 {
+    position: absolute;
+    user-select: none;
+    top: 1500px;
+    left: 80%;
+    width: clamp(100px, 15vw, 200px);
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#img7 {
+    position: absolute;
+    user-select: none;
+    top: 1600px;
+    left: 2%;
+    width: clamp(70px, 10vw, 140px);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#img4, #img5, #img6, #img7 {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Адаптивные фоновые изображения */
+#back2 {
+    top: clamp(1200px, 125vw, 1600px);
+}
+
+/* Медиа-запросы для планшетов */
+@media (max-width: 1024px) {
+    #img1 { top: 150px; left: 8%; }
+    #img2 { top: 350px; left: 88%; }
+    #img3 { top: 500px; left: 6%; }
+    #img4 { top: 800px; left: 85%; }
+    #img5 { top: 1000px; left: 4%; }
+    #img6 { top: 1300px; left: 83%; }
+    #img7 { top: 1400px; left: 2%; }
+    
+    #back2 {
+        top: clamp(1000px, 130vw, 1400px);
+    }
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    #back {
+        width: 150%;
+        top: -10%;
+    }
+    
+    #back2 {
+        width: 150%;
+        top: clamp(900px, 140vw, 1200px);
+        left: 50%;
+    }
+    
+    /* Уменьшаем количество изображений на мобильных */
+    #img2, #img4, #img6 {
+        display: none;
+    }
+    
+    #img1 {
+        top: 120px;
+        left: 10%;
+        width: clamp(80px, 20vw, 120px);
+    }
+    
+    #img3 {
+        top: 400px;
+        left: 75%;
+        width: clamp(70px, 18vw, 100px);
+        transform: translateX(-100%);
+    }
+    
+    #img5 {
+        top: 800px;
+        left: 8%;
+        width: clamp(60px, 15vw, 90px);
+    }
+    
+    #img7 {
+        top: 1000px;
+        left: 70%;
+        width: clamp(50px, 12vw, 80px);
+        transform: translateX(-100%);
+    }
+    
+    /* Отключаем сложные анимации на мобильных */
+    #img1, #img2, #img3 {
+        transform: none !important;
+        transition: none !important;
+        will-change: auto;
+    }
+    
+    #img4, #img5, #img6, #img7 {
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Медиа-запросы для очень маленьких экранов */
+@media (max-width: 480px) {
+    #back {
+        width: 200%;
+        top: -5%;
+    }
+    
+    #back2 {
+        width: 200%;
+        top: clamp(800px, 150vw, 1000px);
+    }
+    
+    #img1 {
+        top: 100px;
+        left: 5%;
+        width: 60px;
+    }
+    
+    #img3 {
+        top: 350px;
+        left: 80%;
+        width: 50px;
+    }
+    
+    #img5 {
+        top: 700px;
+        left: 5%;
+        width: 45px;
+    }
+    
+    #img7 {
+        top: 900px;
+        left: 75%;
+        width: 40px;
+    }
+}
+
+/* Сохраняем плавность анимаций для поддерживающих устройств */
+@media (prefers-reduced-motion: no-preference) {
+    #img1, #img2, #img3 {
+        transition: transform 0.1s ease-out;
+    }
+    
+    #img4, #img5, #img6, #img7 {
+        transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+}
+
+/*main текст*/
+body {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -moz-transform-origin: 0 0;
+}
+
+/* Убираем масштабирование на мобильных устройствах */
+@media (max-width: 768px) {
+    body {
+        zoom: 1;
+        -moz-transform: scale(1);
+        -moz-transform-origin: 0 0;
+    }
+}
+
+#quoteText {
+    user-select: none;
+    position: absolute;
+    top: clamp(200px, 25vw, 380px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(32px, 8vw, 128px);
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 90%;
+    max-width: 1600px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+#quoteText span {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#quoteText span:first-child {
+    margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+#mainText {
+    user-select: none;
+    position: absolute;
+    top: clamp(700px, 80vw, 1100px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(20px, 4vw, 56px);
+    font-weight: 500;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    line-height: 1.3;
+    padding: 0 20px;
+}
+
+#mainText br {
+    display: block;
+    content: "";
+    margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+#coursesText {
+    user-select: none;
+    position: absolute;
+    top: clamp(1200px, 120vw, 1750px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(28px, 5vw, 64px);
+    font-weight: 600;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    line-height: 1.3;
+    padding: 0 20px;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    #quoteText {
+        top: clamp(180px, 22vw, 300px);
+        font-size: clamp(28px, 7vw, 96px);
+    }
+    
+    #mainText {
+        top: clamp(600px, 70vw, 900px);
+        font-size: clamp(18px, 3.5vw, 48px);
+        text-align: left;
+    }
+    
+    #coursesText {
+        top: clamp(1000px, 110vw, 1500px);
+        font-size: clamp(24px, 4.5vw, 56px);
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    #quoteText {
+        top: clamp(150px, 20vw, 250px);
+        font-size: clamp(24px, 6vw, 64px);
+        width: 95%;
+    }
+    
+    #quoteText span:first-child {
+        margin-bottom: 8px;
+    }
+    
+    #mainText {
+        top: clamp(500px, 60vw, 800px);
+        font-size: clamp(16px, 3vw, 36px);
+        text-align: left;
+        width: 95%;
+        line-height: 1.4;
+    }
+    
+    #mainText br {
+        margin-bottom: 8px;
+    }
+    
+    #coursesText {
+        top: clamp(800px, 90vw, 1300px);
+        font-size: clamp(20px, 4vw, 42px);
+        width: 95%;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 480px) {
+    #quoteText {
+        top: clamp(120px, 18vw, 200px);
+        font-size: clamp(20px, 5vw, 48px);
+    }
+    
+    #mainText {
+        top: clamp(400px, 50vw, 700px);
+        font-size: clamp(14px, 2.8vw, 28px);
+        line-height: 1.5;
+    }
+    
+    #coursesText {
+        top: clamp(600px, 75vw, 1100px);
+        font-size: clamp(18px, 3.5vw, 36px);
+    }
+}
+
+/* Защита от горизонтального скролла */
+@media (max-width: 768px) {
+    #quoteText,
+    #mainText,
+    #coursesText {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Сохранение читаемости на очень маленьких экранах */
+@media (max-width: 320px) {
+    #quoteText {
+        font-size: 18px;
+        top: 100px;
+    }
+    
+    #mainText {
+        font-size: 14px;
+        top: 350px;
+    }
+    
+    #coursesText {
+        font-size: 16px;
+        top: 500px;
+    }
+}
+/* КУРСЫ - Оригинальные стили сохранены */
+.square {
+    position: relative;
+    width: 712px;
+    height: 396px;
+    border-radius: 16px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* Сохраняем оригинальные градиенты и тени */
+#square1 { 
+    left: 150px; 
+    top: 1200px; 
+    background: linear-gradient(135deg, rgba(255, 219, 126, 0.7));
+}
+
+#square2 { 
+    left: 1050px; 
+    top: 803px; 
+    background: linear-gradient(135deg, rgba(126, 255, 201, 0.7));
+}
+
+#square3 { 
+    left: 150px; 
+    top: 903px; 
+    background: linear-gradient(135deg, rgba(129, 126, 255, 0.7));
+}
+
+#square4 { 
+    left: 1050px; 
+    top: 507px; 
+    background: linear-gradient(135deg, rgba(255, 126, 126, 0.7));
+}
+
+/* Контейнер для карточек */
+.cards-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Основная карточка (передняя) */
+.main-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Задняя карточка (описание) */
+.back-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Анимация при активации */
+.square.active .main-card {
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+    z-index: 1;
+}
+
+.square.active .back-card {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+/* Сохраняем оригинальные градиенты для обеих карт */
+#square1 .main-card,
+#square1 .back-card { background: linear-gradient(135deg, rgba(255, 219, 126, 0.7)); }
+
+#square2 .main-card,
+#square2 .back-card { background: linear-gradient(135deg, rgba(126, 255, 201, 0.7)); }
+
+#square3 .main-card,
+#square3 .back-card { background: linear-gradient(135deg, rgba(129, 126, 255, 0.7)); }
+
+#square4 .main-card,
+#square4 .back-card { background: linear-gradient(135deg, rgba(255, 126, 126, 0.7)); }
+
+/* Оригинальные стили текста и изображений */
+.name_courses {
+    user-select: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center; 
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.courses_image {
+    user-select: none;
+    display: block;
+    max-width: 80%;
+    max-height: 50%;
+    object-fit: contain;
+    margin: 20px 0;
+}
+
+.courses {
+    user-select: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center; 
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/* Стили для описания на задней карточке */
+.course-description {
+    text-align: center;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-description h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: Montserrat, sans-serif;
+}
+
+.course-description p {
+    font-size: 25px;
+    line-height: 1.5;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    flex-grow: 1;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .square {
+        width: 40%; /* Изменение размера квадрата для меньших экранов */
+        height: 22.2vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .square {
+        width: 80%; /* Изменение размера квадрата для мобильных устройств */
+        height: 44.4vw;
+    }
+}
+
+/*Больше курсов */
+.more-container {
+    position: absolute;
+    top: 2850px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 1;
+    min-width: 300px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#moreText {
+    user-select: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(24px, 5vw, 64px);
+    font-weight: 600;
+    width: 100%;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+    padding: 0;
+    transform: scale(calc(0.7 + 0.3 * (min(100vw, 1920px) / 1920)));
+    transform-origin: center top;
+}
+
+.btnMore {
+    background: rgba(0, 51, 54, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid #00CCD9;
+    border-radius: 20px;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(16px, 3vw, 32px);
+    font-weight: 600;
+    padding: clamp(12px, 2vw, 15px) clamp(20px, 4vw, 30px);
+    width: clamp(250px, 60vw, 300px);
+    height: auto;
+    min-height: 46px;
+    
+    box-shadow: 
+        0 5px 25px rgba(0, 204, 217, 0.35),
+        0 3px 12px rgba(0, 0, 0, 0.25),
+        inset 0 0 20px rgba(0, 204, 217, 0.1);
+    
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    box-sizing: border-box;
+    transform: scale(calc(0.7 + 0.3 * (min(100vw, 1920px) / 1920)));
+    transform-origin: center top;
+}
+
+.btnMore:hover {
+    transform: scale(calc(0.7 + 0.3 * (min(100vw, 1920px) / 1920))) translateY(-3px);
+    background: rgba(0, 51, 54, 0.85);
+    border: 2px solid #00E6F6;
+    box-shadow: 
+        0 10px 40px rgba(0, 204, 217, 0.5),
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 30px rgba(0, 204, 217, 0.2);
+}
+
+/* Медиа-запросы для разных разрешений */
+@media screen and (max-width: 1920px) {
+    .more-container {
+        top: calc(2850px * (100vw / 1920));
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #moreText {
+        font-size: clamp(20px, 4vw, 48px);
+        margin-bottom: 25px;
+    }
+    
+    .btnMore {
+        width: clamp(220px, 50vw, 280px);
+        font-size: clamp(14px, 2.5vw, 28px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .more-container {
+        top: calc(2850px * 0.6);
+        padding: 0 15px;
+    }
+    
+    #moreText {
+        font-size: clamp(18px, 3.5vw, 36px);
+        margin-bottom: 20px;
+        transform: scale(calc(0.8 + 0.2 * (min(100vw, 768px) / 768)));
+    }
+    
+    .btnMore {
+        width: clamp(200px, 70vw, 250px);
+        font-size: clamp(12px, 2vw, 24px);
+        padding: 10px 15px;
+        border-radius: 16px;
+        transform: scale(calc(0.8 + 0.2 * (min(100vw, 768px) / 768)));
+    }
+    
+    .btnMore:hover {
+        transform: scale(calc(0.8 + 0.2 * (min(100vw, 768px) / 768))) translateY(-2px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .more-container {
+        top: calc(2850px * 0.4);
+        padding: 0 10px;
+    }
+    
+    #moreText {
+        font-size: clamp(16px, 3vw, 28px);
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .btnMore {
+        width: clamp(180px, 80vw, 220px);
+        font-size: clamp(11px, 1.8vw, 20px);
+        padding: 8px 12px;
+        border-radius: 12px;
+        min-height: 40px;
+    }
+}
+
+/* Сохранение пропорций при масштабировании */
+#moreText, .btnMore {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Гарантия читаемости на очень маленьких экранах */
+@media screen and (max-width: 320px) {
+    #moreText {
+        font-size: 16px;
+        transform: none;
+    }
+    
+    .btnMore {
+        font-size: 14px;
+        transform: none;
+        width: 200px;
+    }
+    
+    .btnMore:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Плавное масштабирование при изменении размера окна */
+@media screen and (min-width: 1921px) {
+    #moreText, .btnMore {
+        transform: scale(1);
+    }
+    
+    .btnMore:hover {
+        transform: scale(1) translateY(-3px);
+    }
+}
+
+/*Помощник учителя*/
+
+.helper-container {
+    position: absolute;
+    top: 3200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 4vw, 40px);
+    z-index: 1;
+    width: auto;
+    max-width: 90%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#helperText {
+    user-select: none;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(36px, 8vw, 96px);
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 0.1;
+    transform: translateZ(0); /* Для лучшего рендеринга */
+}
+
+/* Если есть изображение рядом с текстом */
+.helper-image {
+    width: clamp(60px, 12vw, 120px);
+    height: clamp(60px, 12vw, 120px);
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.moreHelps {
+    user-select: none;
+    position: relative;
+    top: clamp(800px, 60vw, 1200px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: clamp(30px, 6vw, 100px);
+    z-index: 1;
+    width: 100%;
+    max-width: 1800px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: clamp(40px, 8vw, 80px);
+}
+
+.helpPair {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(20px, 4vw, 30px);
+    width: clamp(300px, 90vw, 480px);
+    min-height: min-content;
+    margin-bottom: clamp(30px, 6vw, 40px);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.helpImage {
+    user-select: none;
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.helpContent {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2vw, 15px);
+    flex: 1;
+    min-height: min-content;
+}
+
+.nameHelps {
+    user-select: none;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(18px, 3.5vw, 32px);
+    font-weight: 600;
+    margin: 0;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
+    line-height: 1.2;
+    min-height: auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.helpText {
+    display: flex;
+    align-items: flex-start;
+    color: rgb(100, 100, 100);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    white-space: normal;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: left;
+    min-height: auto;
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 1920px) {
+    .helper-container {
+        top: calc(3200px * (100vw / 1920));
+    }
+    
+    .moreHelps {
+        top: calc(1200px * (100vw / 1920));
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .helper-container {
+        top: calc(3200px * 0.8);
+        gap: 30px;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .moreHelps {
+        top: calc(1200px * 0.8);
+        gap: 40px;
+    }
+    
+    #helperText {
+        font-size: clamp(32px, 7vw, 72px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .helper-container {
+        top: calc(3200px * 0.7);
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    #helperText {
+        white-space: normal;
+        line-height: 1.1;
+        font-size: clamp(28px, 6vw, 60px);
+        order: 2; /* Текст под изображением */
+    }
+    
+    .helper-image {
+        order: 1; /* Изображение над текстом */
+        margin-bottom: 15px;
+    }
+    
+    .moreHelps {
+        top: calc(1200px * 0.7);
+        gap: 30px;
+    }
+    
+    .helpPair {
+        width: clamp(280px, 85vw, 400px);
+        min-height: min-content;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .helper-container {
+        top: calc(3200px * 0.6);
+        max-width: 95%;
+        padding: 0 15px;
+    }
+    
+    #helperText {
+        font-size: clamp(24px, 5.5vw, 48px);
+        white-space: normal;
+    }
+    
+    .helper-image {
+        width: clamp(50px, 15vw, 80px);
+        height: clamp(50px, 15vw, 80px);
+    }
+    
+    .moreHelps {
+        top: calc(1200px * 0.6);
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .helpPair {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 350px;
+        min-height: auto;
+        margin-bottom: 30px;
+        padding: 15px;
+    }
+    
+    .helpImage {
+        margin-top: 0;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .helpContent {
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .nameHelps {
+        text-align: center;
+        justify-content: center;
+        font-size: clamp(16px, 3vw, 24px);
+    }
+    
+    .helpText {
+        text-align: center;
+        font-size: clamp(13px, 2.2vw, 16px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .helper-container {
+        top: calc(3200px * 0.5);
+        padding: 0 10px;
+        gap: 15px;
+    }
+    
+    #helperText {
+        font-size: clamp(20px, 4.5vw, 36px);
+        line-height: 1.1;
+    }
+    
+    .helper-image {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+    
+    .moreHelps {
+        top: calc(1200px * 0.5);
+        gap: 20px;
+        padding: 0 10px;
+        margin-top: 30px;
+    }
+    
+    .helpPair {
+        max-width: 300px;
+        margin-bottom: 25px;
+        gap: 12px;
+        padding: 12px;
+    }
+    
+    .helpImage {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .nameHelps {
+        font-size: clamp(16px, 3.5vw, 20px);
+    }
+    
+    .helpText {
+        font-size: clamp(12px, 2vw, 14px);
+        line-height: 1.3;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .helper-container {
+        top: calc(3200px * 0.4);
+    }
+    
+    #helperText {
+        font-size: clamp(18px, 4vw, 28px);
+    }
+    
+    .helper-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .moreHelps {
+        top: calc(1200px * 0.4);
+    }
+    
+    .helpPair {
+        max-width: 280px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+    .helpImage {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nameHelps {
+        font-size: 14px;
+    }
+    
+    .helpText {
+        font-size: 11px;
+    }
+}
+
+/* Гарантия читаемости на очень маленьких экранах */
+@media screen and (max-width: 320px) {
+    .helper-container {
+        top: calc(3200px * 0.35);
+        padding: 0 8px;
+    }
+    
+    #helperText {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    
+    .helper-image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .moreHelps {
+        top: calc(1200px * 0.35);
+        padding: 0 8px;
+    }
+    
+    .helpPair {
+        max-width: 260px;
+        gap: 10px;
+    }
+    
+    .helpImage {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Плавные переходы при изменении размера */
+.helper-container, .moreHelps, .helpPair, #helperText, .helper-image {
+    transition: all 0.3s ease;
+}
+
+/* Исправление для Safari */
+@supports (-webkit-touch-callout: none) {
+    .helper-container, .moreHelps {
+        transform: translateX(-50%) translateZ(0);
+    }
+}
